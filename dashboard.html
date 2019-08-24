@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body style="width: 100%;height: 100vh;">
+		<div class="container-fluid w-100 h-100 border-danger">
+			<div class="row h-100 border-danger">
+				<div class="col-2 border bg-dark">
+					<div class="row">
+						<div class="col-12 text-center mt-4">
+							<img style="height: 200px;" class="img-responsive" src="https://cdn.iconscout.com/icon/free/png-256/avatar-367-456319.png">
+							<h2 class="text-center text-white">José da Silva</h2>
+						</div>
+						<div class="col-12 text-white mt-5">
+							<ul class="list-group w-100">
+							  <li class="list-group-item">
+							  	<a class=" d-flex justify-content-between align-items-center" href="curso.html"><i class="fab fa-youtube fa-2x"></i>
+							  	Meus cursos</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a class=" d-flex justify-content-between align-items-center" href="cursos.html"><i class="fas fa-video fa-2x"></i>
+							  	Cursos</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a class=" d-flex justify-content-between align-items-center" href="calendar.html"><i class="fas fa-funnel-dollar fa-2x"></i>
+							  	Meus gastos</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a class=" d-flex justify-content-between align-items-center"><i class="far fa-newspaper fa-2x"></i>
+							  	Testes</a>
+							  </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-10 border">
+					<div class="row flex-row py-3 w-100 align-items-start py-0 my-0 mx-0 px-2 py-2">
+						<div class="col">
+							<div class="card border-primary my-3 bg-info" style="max-width: 18rem;">
+							  <div class="card-body text-white">
+							    <div class="float-left">
+								  		<h5 class="card-title">Saldo</h5>
+								    	<p class="card-text">R$ 2500,00</p>	
+								  	</div>
+								    <div class="float-right">
+								    	<i class="fas fa-dollar-sign fa-3x"></i>
+								    </div>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card border-primary my-3 bg-info" style="max-width: 18rem;">
+							  <div class="card-body text-white">
+							  	<div class="float-left">
+							  		<h5 class="card-title">Próxima fatura</h5>
+							    	<p class="card-text">19/08/2019</p>	
+							  	</div>
+							    <div class="float-right">
+							    	<i class="fas fa-money-check-alt fa-3x"></i>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card border-primary my-3 bg-info" style="max-width: 18rem;">
+							  <div class="card-body text-white">
+								    <div class="float-left">
+								  		<h5 class="card-title">Gasto mensal</h5>
+								    	<p class="card-text">R$ 130,00</p>	
+								  	</div>
+								    <div class="float-right">
+								    	<i class="far fa-calendar-alt fa-3x"></i>
+								    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="card border-primary my-3 bg-info" style="max-width: 18rem;">
+							  <div class="card-body text-white">
+								    <div class="float-left">
+								  		<h5 class="card-title">Gasto anual</h5>
+								    	<p class="card-text">R$ 2000,00</p>	
+								  	</div>
+								    <div class="float-right">
+								    	<i class="far fa-calendar-alt fa-3x"></i>
+								    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="row d-flex align-items-end py-0 my-0 mx-0 px-2 py-2">
+						<div class="col-8">
+							<canvas id="line-chart" style="position: relative; height:400px; width:100%"></canvas>
+						</div>
+						<div class="col-4">
+							<canvas id="donut" style="position: relative; height:400px; width:100%"></canvas>
+						</div>
+					</div>		
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="fontawesome/js/all.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script type="text/javascript" src="js/chart.js"></script>
+</html>
