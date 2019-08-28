@@ -39,3 +39,25 @@ li > a, li > a:hover, li >a:visited, li > a:focus
 {
 	height: 0px;
 }
+
+@media screen and (max-width: 575px) 
+{
+
+  .container-fluid
+  {    
+    margin-top: 40px;
+  }
+ 
+  .navbar 
+  {
+     display: block !important;
+  }
+}
+
+@media screen and (min-width: 576px) 
+{
+  .navbar 
+  {
+     display: none !important;
+  }
+}
