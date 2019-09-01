@@ -1,77 +1,104 @@
-// register templates
-  const templates = 
-  {
-    popupIsAllDay: function() 
-    {
-      return 'All Day';
-    },
-    popupStateFree: function() {
-      return 'Free';
-    },
-    popupStateBusy: function() {
-      return 'Busy';
-    },
-    titlePlaceholder: function() {
-      return 'Subject';
-    },
-    locationPlaceholder: function() {
-      return 'Location';
-    },
-    startDatePlaceholder: function() {
-      return 'Start date';
-    },
-    endDatePlaceholder: function() {
-      return 'End date';
-    },
-    popupSave: function() {
-      return 'Save';
-    },
-    popupUpdate: function() {
-      return 'Update';
-    },
-    popupDetailDate: function(isAllDay, start, end) {
-      var isSameDate = moment(start).isSame(end);
-      var endFormat = (isSameDate ? '' : 'YYYY.MM.DD ') + 'hh:mm a';
+var calendario;
+var eventos;
+var contador=0;
 
-      if (isAllDay) 
-      {
-        return moment(start).format('YYYY.MM.DD') + (isSameDate ? '' : ' - ' + moment(end).format('YYYY.MM.DD'));
-      }
-
-      return (moment(start).format('YYYY.MM.DD hh:mm a') + ' - ' + moment(end).format(endFormat));
-    },
-    popupDetailLocation: function(schedule) {
-      return 'Location : ' + schedule.location;
-    },
-    popupDetailUser: function(schedule) {
-      return 'User : ' + (schedule.attendees || []).join(', ');
-    },
-    popupDetailState: function(schedule) {
-      return 'State : ' + schedule.state || 'Busy';
-    },
-    popupDetailRepeat: function(schedule) {
-      return 'Repeat : ' + schedule.recurrenceRule;
-    },
-    popupDetailBody: function(schedule) {
-      return 'Body : ' + schedule.body;
-    },
-    popupEdit: function() {
-      return 'Edit';
-    },
-    popupDelete: function() {
-      return 'Delete';
-    }
-  };
-
-var cal = new tui.Calendar('#calendar', 
+var calend = 
 {
-    defaultView: 'month',
-    template: templates,
-    useDetailPopup: true
-});
 
-cal.setOptions({month: {visibleWeeksCount: 4}}, true);
-cal.changeView('month', true);
+  init: function()
+  {
+    eventos = calend.getEvento();
+
+    // calendario.setOptions({month: {visibleWeeksCount: 4}}, true);
+    // calendario.changeView('month', true);
+  },
+  addEvent: function(titulo,data,nivel)
+  {
+      var objeto = 
+      {
+          "id": contador,
+          "name": titulo,
+          "startdate": data,
+          "color": nivel
+      };
+
+      eventos['monthly'].push(objeto);
+
+      $('.calendario').empty();
+
+      let div = "<div class='monthly' id='mycalendar'></div>";
+
+      $('.calendario').append(div);
+
+      $('#mycalendar').monthly({
+        mode: 'event',
+        dataType: 'json',
+        events: eventos
+      });
+  },
+  updateEvent: function()
+  {
+
+  },
+  removeEvent: function()
+  {
+
+  },
+  getEvento: function()
+  {
+      eventos= {
+        "monthly": [
+          
+        ]
+      };
+
+      return eventos;
+  },
+  loadListeners: function()
+  {
+    $(document).ready(function() 
+    {
+      $('#mycalendar').monthly({
+        mode: 'event',
+        dataType: 'json',
+        events: eventos
+      });
+
+      $('form').submit(function(event) 
+      {
+        let titulo = $('#titulo').val();
+        let data = $('#data').val();
+        let nivel = $('#nivel').val();
+
+        calend.addEvent(titulo,data,nivel);
+
+
+        // cal.createSchedules([
+        //     {
+        //         id: '1',
+        //         calendarId: '1',
+        //         title: $('#titulo').val(),
+        //         body: $('#descricao').val(),
+        //         category: 'time',
+        //         dueDateClass: '',
+        //         start:$('#data').val()+'T22:30:00+09:00',
+        //         isVisible: true
+        //     }
+        // ]); 
+
+        // $('.tui-full-calendar-weekday-schedule-bullet').css('height', '0px');
+
+        $('#myModal').modal('hide');
+
+        return false;
+      }); 
+    });
+  }
+}
+
+calend.init();
+calend.loadListeners();
+
 
 
 $( ".datepicker" ).datepicker(
@@ -80,29 +107,5 @@ $( ".datepicker" ).datepicker(
 });
 
 
-$(document).ready(function() 
-{
-	$('form').submit(function(event) 
-	{
-		console.log($('#titulo').val());
-		console.log($('#data').val());
-		cal.createSchedules([
-		    {
-		        id: '1',
-		        calendarId: '1',
-		        title: $('#titulo').val(),
-		        body: 'my scdsjb',
-		        category: 'time',
-		        dueDateClass: '',
-		        start:$('#data').val()+'T22:30:00+09:00',
-		        isVisible: true
-		    }
-		]);	
 
-		$('.tui-full-calendar-weekday-schedule-bullet').css('height', '0px');
-
-		$('#myModal').modal('hide');
-
-		return false;
-	});	
-});
+  

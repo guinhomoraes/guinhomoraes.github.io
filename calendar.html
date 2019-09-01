@@ -7,9 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
 		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/jquery-ui.css">
-		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
-		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
-		<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
+		<link rel="stylesheet" href="monthly/css/monthly.css">
 	</head>
 	<body style="width: 100%;height: 100vh;">
 		<nav class="navbar navbar-expand-md bg-info navbar-dark fixed-top">
@@ -89,22 +87,8 @@
 						<div class="col-12 mb-3 mt-3">
 							<button data-toggle="modal" data-target="#myModal" class="btn btn-secondary pull-left">Adicionar gasto</button>
 						</div>
-						<div class="col-12">
-							<div id="menu">
-						      <span id="menu-navi">
-						        <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">Today</button>
-						        <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev">
-						          <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
-						        </button>
-						        <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next">
-						          <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
-						        </button>
-						      </span>
-						      <span id="renderRange" class="render-range"></span>
-						    </div>
-							<div id="calendar" class="h-100">
-								
-							</div>
+						<div class="col-12 calendario">
+							<div class="monthly" id="mycalendar"></div>
 						</div>
 					</div>
 				</div>
@@ -114,14 +98,14 @@
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 
-		      <!-- Modal Header -->
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		      </div>
-
 		      <!-- Modal body -->
 		      <div class="modal-body">
 		        	<div class="container">
+		        		<div class="row">
+		        			<div class="col-12">	
+		        				<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        			</div>	
+		        		</div>
 		        		<div class="row">
 		        			<div class="col-12">
 		        				<form>
@@ -134,6 +118,14 @@
 		        							<label>Data</label>
 		        							<input id="data"  name="" class="form-control datepicker">
 		        						</div>
+		        						<div class="col-12 mb-2">	
+		        							<label for="">Nível</label>
+		        							<select class="form-control" id="nivel">
+		        								<option value="#7ce69d">Leve</option>
+		        								<option value="#eded4c">Médio</option>
+		        								<option value="#eb3f2f">Urgente</option>
+		        							</select>
+		        						</div>
 		        						<div class="col-12 mb-2">
 		        							<button class="btn btn-secondary btn-block">Adicionar</button>
 		        						</div>
@@ -143,12 +135,6 @@
 		        		</div>
 		        	</div>
 		      </div>
-
-		      <!-- Modal footer -->
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-		      </div>
-
 		    </div>
 		  </div>
 		</div>
@@ -157,17 +143,40 @@
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="fontawesome/js/all.js"></script>
-	<script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.min.js"></script>
-  	<script type="text/javascript" src="https://uicdn.toast.com/tui.dom/v3.0.0/tui-dom.js"></script>
-  	<script type="text/javascript" src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
-  	<script type="text/javascript" src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.13/chance.min.js"></script>
-  	<script src="js/tui-calendar.js"></script>
   	<script src="js/calendars.js"></script>
   	<script src="js/schedules.js"></script>
   	<script src="js/default.js"></script>
   	<script src="js/jquery-ui.js"></script>
 	<script src="js/index.js"></script>
-  	
+	<script src="monthly/js/monthly.js"></script>
+  	<!-- <script type="text/javascript">
+
+	$(document).ready(function() 
+	{
+		var sampleEvents = {
+			"monthly": [
+				{
+				"id": 1,
+				"name": "Conta de Luz",
+				"startdate": "2019-09-02",
+				"enddate": "2019-09-02",
+				"starttime": "12:00",
+				"endtime": "2:00",
+				"color": "#99CCCC",
+				"url": ""
+				},
+				{
+				"id": 2,
+				"name": "Conta de água",
+				"startdate": "2019-09-19",
+				"enddate": "2019-09-19",
+				"starttime": "12:00",
+				"endtime": "2:00",
+				"color": "#CC99CC",
+				"url": ""
+				}
+			]
+		};
+	});
+	</script> -->
 </html>
