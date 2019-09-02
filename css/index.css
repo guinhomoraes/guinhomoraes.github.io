@@ -1,3 +1,10 @@
+.fundo
+{
+    /*background-image: url('https://blog.andersonferro.com.br/wp-content/uploads/2014/10/Parallax-Background-Light-1_1-02.jpg');*/
+    background-image: url('../img/fundo.jpg');
+    opacity:0.7;
+}
+
 .list-group-item 
 {
 	background-color: transparent !important;
