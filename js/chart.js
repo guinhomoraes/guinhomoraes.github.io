@@ -1,5 +1,6 @@
 new Chart(document.getElementById("line-chart"), {
   type: 'line',
+  responsive: true,
   data: {
     labels: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro'],
     datasets: [{ 
@@ -40,6 +41,7 @@ new Chart(document.getElementById("line-chart"), {
 
 var myChart = new Chart(document.getElementById("donut"), {
   type: 'doughnut',
+  responsive: true,
   data: {
     labels: ['Mercado', 'Transporte', 'Compras', 'Outros'],
     datasets: [{
@@ -62,7 +64,6 @@ var myChart = new Chart(document.getElementById("donut"), {
   },
   options: {
     cutoutPercentage: 40,
-    responsive: false,
-
+    // responsive: false,
   }
 });

@@ -19,7 +19,8 @@ var calend =
           "id": contador,
           "name": titulo,
           "startdate": data,
-          "color": nivel
+          "color": nivel,
+          'url':'javascript:void()'
       };
 
       eventos['monthly'].push(objeto);
@@ -71,22 +72,6 @@ var calend =
         let nivel = $('#nivel').val();
 
         calend.addEvent(titulo,data,nivel);
-
-
-        // cal.createSchedules([
-        //     {
-        //         id: '1',
-        //         calendarId: '1',
-        //         title: $('#titulo').val(),
-        //         body: $('#descricao').val(),
-        //         category: 'time',
-        //         dueDateClass: '',
-        //         start:$('#data').val()+'T22:30:00+09:00',
-        //         isVisible: true
-        //     }
-        // ]); 
-
-        // $('.tui-full-calendar-weekday-schedule-bullet').css('height', '0px');
 
         $('#myModal').modal('hide');
 
