@@ -73,6 +73,8 @@ var calend =
 
         calend.addEvent(titulo,data,nivel);
 
+        $('#myModal').find('input').val('');
+
         $('#myModal').modal('hide');
 
         return false;
