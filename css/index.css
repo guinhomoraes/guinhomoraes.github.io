@@ -5,7 +5,7 @@
     opacity:0.7;
 }
 
-.list-group-item 
+.list-group-item , .list-group-item > a
 {
 	background-color: transparent !important;
 	color: white !important;
@@ -47,7 +47,7 @@ li > a, li > a:hover, li >a:visited, li > a:focus
 	height: 0px;
 }
 
-@media screen and (max-width: 575px) 
+/*@media screen and (max-width: 575px) 
 {
 
   .container-fluid
@@ -67,4 +67,4 @@ li > a, li > a:hover, li >a:visited, li > a:focus
   {
      display: none !important;
   }
-}
+}*/

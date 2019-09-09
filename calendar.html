@@ -1,182 +1,160 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
-		<link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="css/jquery-ui.css">
-		<link rel="stylesheet" href="monthly/css/monthly.css">
-	</head>
-	<body style="width: 100%;height: 100vh;">
-		<nav class="navbar navbar-expand-md bg-info navbar-dark fixed-top">
-		  <a class="navbar-brand" href="#">Vanquest</a>
-		  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-		  	<ul class="navbar-nav list-group w-100">
-			  <li class="list-group-item">
-			  	<a class=" d-flex justify-content-between align-items-center" href="dashboard.html"><i class="fas fa-chart-line fa-2x"></i>
-			  	<span class="">Dashboard</span></a>
-			  </li>
-			  <li class="nav-item list-group-item">
-			  	<a class=" d-flex justify-content-between align-items-center" href="curso.html"><i class="fab fa-youtube fa-2x"></i>
-			  	<span class="">Meus cursos</span>
-			  	</a>
-			  </li>
-			  <li class="nav-item list-group-item">
-			  	<a class=" d-flex justify-content-between align-items-center" href="cursos.html"><i class="fas fa-video fa-2x"></i>
-			  	<span class="">Cursos</span>
-			  	</a>
-			  </li>
-			  <li class="nav-item list-group-item">
-			  	<a class=" d-flex justify-content-between align-items-center" href="calendar.html"><i class="fas fa-funnel-dollar fa-2x"></i>
-			  	<span class="">Meus gastos</span>
-			  	</a>
-			  </li>
-			  <li class="nav-item list-group-item">
-			  	<a class=" d-flex justify-content-between align-items-center"><i class="far fa-newspaper fa-2x"></i>
-			  	<span class="">Testes</span>
-			  	</a>
-			  </li>
-			</ul>
-		  </div>  
-		</nav>
-		<div class="container-fluid w-100 h-100 border-danger">
-			<div class="row h-100 border-danger">
-				<div class="d-none d-sm-block col-sm-2 border bg-dark">
-					<div class="row">
-						<div class="col-12 text-center mt-4">
-							<img class="img-fluid" src="https://cdn.iconscout.com/icon/free/png-256/avatar-367-456319.png">
-							<h2 class="text-center text-white d-none d-sm-none d-lg-block">José da Silva</h2>
-						</div>
-						<div class="col-12 text-white mt-5">
-							<ul class="list-group w-100">
-							  <li class="list-group-item">
-							  	<a class=" d-flex justify-content-between align-items-center" href="dashboard.html"><i class="fas fa-chart-line fa-2x"></i>
-							  	<span class="d-none d-lg-block">Dashboard</span></a>
-							  </li>
-							  <li class="list-group-item">
-							  	<a class=" d-flex justify-content-between align-items-center" href="curso.html"><i class="fab fa-youtube fa-2x"></i>
-							  	<span class="d-none d-lg-block">Meus cursos</span>
-							  	</a>
-							  </li>
-							  <li class="list-group-item">
-							  	<a class=" d-flex justify-content-between align-items-center" href="cursos.html"><i class="fas fa-video fa-2x"></i>
-							  	<span class="d-none d-lg-block">Cursos</span>
-							  	</a>
-							  </li>
-							  <li class="list-group-item">
-							  	<a class=" d-flex justify-content-between align-items-center" href="calendar.html"><i class="fas fa-funnel-dollar fa-2x"></i>
-							  	<span class="d-none d-lg-block">Meus gastos</span>
-							  	</a>
-							  </li>
-							  <li class="list-group-item">
-							  	<a class=" d-flex justify-content-between align-items-center"><i class="far fa-newspaper fa-2x"></i>
-							  	<span class="d-none d-lg-block">Testes</span>
-							  	</a>
-							  </li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-10 border">
-					<div class="row ml-3 mt-3">
-						<div class="col-12 mb-3 mt-3">
-							<button data-toggle="modal" data-target="#myModal" class="btn btn-secondary pull-left">Adicionar gasto</button>
-						</div>
-						<div class="col-12 calendario">
-							<div class="monthly" id="mycalendar"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="modal" id="myModal">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
+<html lang="en">
 
-		      <!-- Modal body -->
-		      <div class="modal-body">
-		        	<div class="container">
-		        		<div class="row">
-		        			<div class="col-12">	
-		        				<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        			</div>	
-		        		</div>
-		        		<div class="row">
-		        			<div class="col-12">
-		        				<form>
-		        					<div class="row">
-		        						<div class="col-12 mb-2">
-		        							<label>Título</label>
-		        							<input id="titulo" type="text" name="" class="form-control" required="required">
-		        						</div>
-		        						<div class="col-12 mb-3">
-		        							<label>Data</label>
-		        							<input id="data"  name="" class="form-control datepicker" required="required">
-		        						</div>
-		        						<div class="col-12 mb-3">	
-		        							<label for="">Nível</label>
-		        							<select class="form-control" id="nivel" required="required">
-		        								<option value="#7ce69d">Leve</option>
-		        								<option value="#eded4c">Médio</option>
-		        								<option value="#eb3f2f">Urgente</option>
-		        							</select>
-		        						</div>
-		        						<div class="col-12 mb-2">
-		        							<button class="btn btn-secondary btn-block">Adicionar</button>
-		        						</div>
-		        					</div>
-		        				</form>
-		        			</div>
-		        		</div>
-		        	</div>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</body>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="fontawesome/js/all.js"></script>
-  	<script src="js/calendars.js"></script>
-  	<script src="js/schedules.js"></script>
-  	<script src="js/default.js"></script>
-  	<script src="js/jquery-ui.js"></script>
-	<script src="js/index.js"></script>
-	<script src="monthly/js/monthly.js"></script>
-  	<!-- <script type="text/javascript">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Meus gastos
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <link href="css/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="monthly/css/monthly.css">
+</head>
 
-	$(document).ready(function() 
-	{
-		var sampleEvents = {
-			"monthly": [
-				{
-				"id": 1,
-				"name": "Conta de Luz",
-				"startdate": "2019-09-02",
-				"enddate": "2019-09-02",
-				"starttime": "12:00",
-				"endtime": "2:00",
-				"color": "#99CCCC",
-				"url": ""
-				},
-				{
-				"id": 2,
-				"name": "Conta de água",
-				"startdate": "2019-09-19",
-				"enddate": "2019-09-19",
-				"starttime": "12:00",
-				"endtime": "2:00",
-				"color": "#CC99CC",
-				"url": ""
-				}
-			]
-		};
-	});
-	</script> -->
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <div class="logo">
+        <a href="dashboard.html" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img class="img-fluid" src="https://cdn.iconscout.com/icon/free/png-256/avatar-367-456319.png">
+          </div>
+        </a>
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          José da Silva
+        </a>
+      </div>
+      <div class="sidebar-wrapper bg-dark">
+        <ul class="nav w-100">
+          <li class="list-group-item">
+            <a class=" d-flex justify-content-between align-items-center" href="dashboard.html"><i class="fas fa-chart-line fa-2x"></i>
+            <span class="">Dashboard</span></a>
+          </li>
+          <li class="nav-item list-group-item">
+            <a class=" d-flex justify-content-between align-items-center" href="curso.html"><i class="fab fa-youtube fa-2x"></i>
+            <span class="">Meus cursos</span>
+            </a>
+          </li>
+          <li class="nav-item list-group-item">
+            <a class=" d-flex justify-content-between align-items-center" href="cursos.html"><i class="fas fa-video fa-2x"></i>
+            <span class="">Cursos</span>
+            </a>
+          </li>
+          <li class="nav-item list-group-item">
+            <a class=" d-flex justify-content-between align-items-center" href="calendar.html"><i class="fas fa-funnel-dollar fa-2x"></i>
+            <span class="">Meus gastos</span>
+            </a>
+          </li>
+          <li class="nav-item list-group-item">
+            <a class=" d-flex justify-content-between align-items-center"><i class="far fa-newspaper fa-2x"></i>
+            <span class="">Testes</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Vanquest Capital</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+          <div class="row ml-3 mt-3">
+            <div class="col-12 mb-3">
+              <button data-toggle="modal" data-target="#myModal" class="btn btn-secondary pull-left">Adicionar gasto</button>
+            </div>
+            <div class="col-12 calendario">
+              <div class="monthly" id="mycalendar"></div>
+            </div>
+          </div>
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-12">  
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>  
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <form>
+                                <div class="row">
+                                  <div class="col-12 mb-2">
+                                    <label>Título</label>
+                                    <input id="titulo" type="text" name="" class="form-control" required="required">
+                                  </div>
+                                  <div class="col-12 mb-3">
+                                    <label>Data</label>
+                                    <input id="data"  name="" class="form-control datepicker" required="required">
+                                  </div>
+                                  <div class="col-12 mb-3"> 
+                                    <label for="">Nível</label>
+                                    <select class="form-control" id="nivel" required="required">
+                                      <option value="#7ce69d">Leve</option>
+                                      <option value="#eded4c">Médio</option>
+                                      <option value="#eb3f2f">Urgente</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-12 mb-2">
+                                    <button class="btn btn-secondary btn-block">Adicionar</button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </div>
+      <footer class="footer footer-black  footer-white ">
+      </footer>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="fontawesome/js/all.js"></script>
+  <script src="js/perfect-scrollbar.jquery.min.js"></script>
+  <script src="js/bootstrap-notify.js"></script>
+  <script src="js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="js/demo.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/index.js"></script>
+  <script src="monthly/js/monthly.js"></script>
+</body>
+
 </html>

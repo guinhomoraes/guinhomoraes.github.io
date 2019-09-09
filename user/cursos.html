@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="../text/css" href="fontawesome/css/all.css">
+		<link rel="stylesheet" href="../css/index.css">
+	</head>
+	<body style="width: 100%;height: 100vh;">
+		<nav class="navbar navbar-expand-md bg-info navbar-dark fixed-top">
+		  <a class="navbar-brand" href="#">Vanquest</a>
+		  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		  	<ul class="navbar-nav list-group w-100">
+			  <li class="list-group-item">
+			  	<a class=" d-flex justify-content-between align-items-center" href="dashboard.html"><i class="fas fa-chart-line fa-2x"></i>
+			  	<span class="">Dashboard</span></a>
+			  </li>
+			  <li class="nav-item list-group-item">
+			  	<a class=" d-flex justify-content-between align-items-center" href="curso.html"><i class="fab fa-youtube fa-2x"></i>
+			  	<span class="">Cursos</span>
+			  	</a>
+			  </li>
+			</ul>
+		  </div>  
+		</nav>
+		<div class="container-fluid w-100 h-100 border-danger">
+			<div class="row h-100 border-danger">
+				<div class="d-none d-sm-block col-sm-2 border bg-dark">
+					<div class="row">
+						<div class="col-12 text-center mt-4">
+							<img class="img-fluid" src="https://cdn.iconscout.com/icon/free/png-256/avatar-367-456319.png">
+							<h2 class="text-center text-white d-none d-sm-none d-lg-block">José da Silva</h2>
+						</div>
+						<div class="col-12 text-white mt-5">
+							<ul class="list-group w-100">
+							  <li class="list-group-item">
+							  	<a class=" d-flex justify-content-between align-items-center" href="dashboard.html"><i class="fas fa-chart-line fa-2x"></i>
+							  	<span class="d-none d-lg-block">Dashboard</span></a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a class=" d-flex justify-content-between align-items-center" href="cursos.html"><i class="fab fa-youtube fa-2x"></i>
+							  	<span class="d-none d-lg-block">Cursos</span>
+							  	</a>
+							  </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-10 border">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 my-3">
+								<a class="btn btn-secondary float-right" href="novo_curso.html">Cadastrar Curso</a>
+							</div>
+							<div class="col-12 my-3">
+								<form action="">
+									<div class="row align-items-end">
+										<div class="col-md-4">
+											<label for="">Curso</label>
+											<input type="text" class="form-control">
+										</div>
+										<div class="col-md-2">
+											<button class="btn btn-info btn-block">Pesquisar</button>
+										</div>
+										<div class="col-md-2">
+											<button class="btn btn-danger btn-block">Limpar</button>
+										</div>
+									</div>								
+								</form>
+							</div>				
+							<div class="col-12">
+								<div class="table table-responsive">
+									<table class="table table-striped table-hover">
+										<thead>
+											<tr class="text-center">
+												<th class="text-center">Curso</th>
+												<th class="text-center">Ações</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="text-center">
+												<td>
+													Curso 1
+												</td>
+												<td>
+													<button class="btn btn-info"><i class="far fa-edit"></i></button>
+													<button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+												</td>
+											</tr>
+											<tr class="text-center">
+												<td>
+													Curso 2
+												</td>
+												<td>
+													<button class="btn btn-info"><i class="far fa-edit"></i></button>
+													<button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+												</td>
+											</tr>
+											<tr class="text-center">
+												<td>
+													Curso 3
+												</td>
+												<td>
+													<button class="btn btn-info"><i class="far fa-edit"></i></button>
+													<button class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../fontawesome/js/all.js"></script>
+</html>
